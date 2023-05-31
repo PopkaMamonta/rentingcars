@@ -48,9 +48,76 @@
     line-height: 16px;
     font-weight: 600;
     text-align: center;
-    margin-right: 89px;
+    margin-right: 79px;
     margin-left: 10px;
   }
   body{
     margin:0px;
+  }
+  .footer{
+    display: flex;
+    justify-content: center;
+  }
+
+  .filter{
+    align-items: center;
+    background-color: #CDCED0;
+    padding: 179px;
+  }
+
+.container{
+    display: flex;
+}
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-right: 10px;
+    min-width: 230px;
+  }
+  @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+  body {
+    font: 400 17px/2em 'Source Sans Pro', sans-serif;
+  }
+  
+  .select-box {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+  }
+  
+  .select,
+  .label {
+    color: #414141;
+    display: block;
+    font: 400 17px/2em 'Source Sans Pro', sans-serif;
+  }
+  
+  .select {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 5px 0;
+    height: 40px;
+    opacity: 0;
+    border: 0 none;
+    cursor: pointer;
+  }
+  .select-box1 {
+    background: #ececec;
+  }
+  
+  .label {
+    padding: 5px 10px;
+  }
+  .label::after {
+    content: url(/images/arrow.png);
+    position: absolute;
+    right: 0;
+    height: 14px;
+    padding: 2px 16px 16px 50px;
+    border-left: 2px solid #CDCED0;
   }
