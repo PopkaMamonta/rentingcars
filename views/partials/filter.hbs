@@ -1,27 +1,63 @@
 <section class="filter">
-    <a class="filter-title">Фильтры</a>
+    <div>
+        <a class="filter-title">Фильтры</a>
     <div class="container">
         <form action="#">
-            <div class="select-box">
-                <label for="select-box1" class="label select-box1"><span class="label-desc">Выбрать марку</span></label>
-                <select id="select-box1" class="select">
-                    <option value="Choice 1">...</option>
-                    <option value="Choice 2">...</option>
-                    <option value="Choice 3">...</option>
-                </select> 
-            </div>
+               <input type="text" class="chosen-value" value="" placeholder="Выбрать марку">
+                <ul class="value-list0">
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">bmw</li>
+                    <li id="item-list0">cayenne</li>
+                    <li id="item-list0">vw</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                    <li id="item-list0">audi</li>
+                </ul>
         </form>
         <form action="#">
-            <div class="select-box">
-                <label for="select-box1" class="label select-box1"><span class="label-desc">От дешевого к дорогому</span></label>
-                <select id="select-box1" class="select">
-                    <option value="Choice 1">...</option>
-                    <option value="Choice 2">...</option>
-                    <option value="Choice 3">...</option>
-                </select> 
-            </div>
+               <input type="text" class="chosen-value" value="" placeholder="Фильтр цен">
+                <ul class="value-list1">
+                    <li id="item-list1">От дешевого к дорогому</li>
+                    <li id="item-list1">От дорогого к дешевому</li>
+                </ul>
         </form>
-
+        <form action="#" style="margin-top: 5px;">
+            <input type="text" value="" class="input-text" placeholder="Цена от">
+        </form>
+        <form action="#" style="margin-top: 5px;">
+            <input type="text" value="" class="input-text" placeholder="Цена до">
+        </form>
+        <h3 class="clear" href="#">Очистить</h3>
     </div>
-
+    </div>
+    
+    <div class="container">
+        <ul class="fuel">
+            <div class="fuel-value"><input type="checkbox" class="check-box"></input><li>LPG</li></div>
+            <div class="fuel-value"><input type="checkbox" class="check-box"></input><li>Бензин</li></div>
+            <div class="fuel-value"><input type="checkbox" class="check-box"></input><li>Дизель</li></div>
+            <div class="fuel-value"><input type="checkbox" class="check-box"></input><li>Гибрид</li></div>
+            <div class="fuel-value"><input type="checkbox" class="check-box"></input><li>Газ (CNG)</li></div>
+        </ul>
+    </div>
+    <div class="container">
+        <ul class="transmission">
+            <div class="transmission-value"><input type="checkbox" class="check-box"></input><li>Автомат</li></div>
+            <div class="transmission-value"><input type="checkbox" class="check-box"></input><li>Механическая КП</li></div>
+        </ul>
+    </div>
+    <div class="container">
+        <ul class="body">
+            <div class="body-value"><div class="img-box"></div><li>Хэтчбэк</li></div>
+            <div class="body-value"><div class="img-box"></div><li>Седан</li></div>
+            <div class="body-value"><div class="img-box"></div><li>Купе</li></div>
+            <div class="body-value"><div class="img-box"></div><li>Универсал</li></div>
+            <div class="body-value"><div class="img-box"></div><li>Внедорожник</li></div>
+            <div class="body-value"><div class="img-box"></div><li>Фургон</li></div> 
+        </ul>
+    </div>
   </section>

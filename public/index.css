@@ -58,66 +58,256 @@
     display: flex;
     justify-content: center;
   }
-
+  .filter-title{
+    text-decoration: none;
+    color: #000000;
+    letter-spacing: 0.5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 600;
+  }
   .filter{
-    align-items: center;
     background-color: #CDCED0;
-    padding: 179px;
+    padding: 50px 153px 242px 179px;
+    display: flex;
+    height: 180px;
+    flex-direction: row;
   }
 
-.container{
-    display: flex;
+form{
+  position: relative;
+  width: 18rem;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
-  form{
+.chosen-value, .value-list{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.chosen-value{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  height: 35px;
+  font-size: 16px;
+  padding: 5px;
+  max-width: 277px;
+  background-color: #ffffff;
+  border:1px solid #aaaaaa;
+  transition: .3s ease-in-out;
+
+  &::-webkit-input-placeholder{
+    color: #000000;
+  }
+  &:hover{
+    background-color:#FBD382;
+    cursor: pointer;
+    
+    &::-webkit-input-placeholder{
+      color: #000000;
+    }
+  }
+  &:focus,
+  &.open{
+    box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.2);
+    outline: 0;
+    background-color: #FBD382;
+    color: #000000;
+
+    &::-webkit-input-placeholder{
+      color: #000000;
+    }
+  }
+}
+
+.value-list0, .value-list1{
+  list-style: none;
+  margin-top: 46px;
+  box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.2);
+  overflow: hidden;
+  padding: 0;
+  max-height: 0;
+  transition: .3s ease-in-out;
+
+  &.open{
+    padding: 0;
+    max-height: 200px;
+    overflow: auto;
+  }
+}
+  .value-list0 li, .value-list1 li{
+    height: 35px;
+    background-color: #FBD382 0%;
+    letter-spacing: 0.5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover{
+      background-color:#FBD382
+    }
+    
+
+    &.closed{
+      max-height: 0;
+      overflow: hidden;
+      padding: 0;
+      opacity: 0;
+    }
+  }
+
+  .container{
+    display: flex;
+    width: 600px;
+    flex-wrap: wrap;
+  }
+
+  .input-text{
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    height: 35px;
+    font-size: 16px;
+    padding: 5px;
+    min-width: 277px;
+    background-color: #ffffff;
+    border: 1px solid #aaaaaa;
+    transition: .3s ease-in-out;
+
+    &::-webkit-input-placeholder{
+      color: #000000;
+    }
+    &:hover{
+      background-color:#FBD382;
+      cursor: pointer;
+      
+      &::-webkit-input-placeholder{
+        color: #000000;
+      }
+    }
+    &:focus{
+      box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.2);
+      outline: 0;
+      background-color: #FBD382;
+    }
+    
+  }
+  .clear{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+  }
+
+  .fuel li, .transmission li{
+    text-decoration: none;
+    color: #000000;
+    letter-spacing: 0.5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 600;
+    list-style-type: none;
+    text-align: center;
+  }
+  input[type="checkbox"]{
+    margin: 0px 10px 0px 0px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #aaaaaa;
+    box-sizing: unset;
+    background-color: #ffffff;
+    appearance: none;
+
+    &:hover{
+      background-color: #FBD382;
+      transition: .3s ease-in-out;
+    }
+    
+    &:checked{
+      background-color: #FBD382;
+      border: 2px solid #ffffff;
+      width: 28px;
+      height: 28px;
+      transition: none;
+    }
+    &:active{
+      transform: scale(.9);
+    }
+  }
+  .fuel-value, .transmission-value{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .fuel, .transmission{
+    padding-top: 13px;
+  }
+
+  .body{
+    display: flex;
+    width: 320px;
+    margin: 0;
+    flex-wrap: wrap;
+    padding-top: 40px;
+  }
+
+  .body-value{
+    min-width: 152px;
+    min-height: 122px;
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    padding-right: 10px;
-    min-width: 230px;
+    align-items: center;
+    &:hover{
+      text-decoration: underline;
+    }
+    
   }
-  @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+  .body-value li{
+    padding: 7px 0px 7px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    letter-spacing: 0.5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 600;
+    list-style-type: none;
+    max-width: 132px;
+  }
 
-  body {
-    font: 400 17px/2em 'Source Sans Pro', sans-serif;
-  }
-  
-  .select-box {
-    cursor: pointer;
-    position: relative;
-    width: 100%;
-  }
-  
-  .select,
-  .label {
-    color: #414141;
-    display: block;
-    font: 400 17px/2em 'Source Sans Pro', sans-serif;
-  }
-  
-  .select {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    padding: 5px 0;
-    height: 40px;
-    opacity: 0;
-    border: 0 none;
-    cursor: pointer;
-  }
-  .select-box1 {
-    background: #ececec;
-  }
-  
-  .label {
-    padding: 5px 10px;
-  }
-  .label::after {
-    content: url(/images/arrow.png);
-    position: absolute;
-    right: 0;
-    height: 14px;
-    padding: 2px 16px 16px 50px;
-    border-left: 2px solid #CDCED0;
+  .img-box{
+    width: 130px;
+    height: 70px;
+    background-color: #ffffff;
+    border:1px solid #aaaaaa;
+    transition: .3s ease-in-out;
+
+    &:hover{
+      width: 140px;
+      height: 80px;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+    }
+
   }
