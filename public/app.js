@@ -1,6 +1,10 @@
 
 const inputField=[...
 document.querySelectorAll('.chosen-value')];
+const checkBox=[...
+document.querySelectorAll('.check-box')];
+const inputText=[...
+document.querySelectorAll('.input-text')];
 
 const closeDropdown=()=>{
     dropdown.classList.remove('open');
@@ -62,5 +66,25 @@ dropdownArray.forEach(item=>{
             dropdown.classList.remove('open');
         }
     });
-    
+
 }
+
+if(window.location.pathname=="/login"){
+    document.getElementById('login').style.display="none";
+}
+if(window.location.pathname=="/registration"){
+    document.getElementById('login').style.display="none";
+}
+
+const clear=document.querySelector('.clear');
+clear.addEventListener('click',()=>{
+    inputField[0].value='';
+    inputField[1].value='';
+    inputText[0].value='';
+    inputText[1].value='';
+    for (let b = 0; b < checkBox.length; b++) {
+        checkBox[b].checked=false;       
+    }
+})
+
+

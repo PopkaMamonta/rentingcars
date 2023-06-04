@@ -17,6 +17,18 @@ app.use(express.static('public'))
 app.get('/', (req,res)=>{
     res.render('index')
 })
+app.get('/login', (req,res)=>{
+    res.render('login')
+})
+app.get('/registration', (req,res)=>{
+    res.render('registration')
+})
+app.get('/renting', (req,res)=>{
+    res.render('renting')
+})
+app.get('/account', (req,res)=>{
+    res.render('account')
+})
 
 const PORT=process.env.PORT || 3000
 
