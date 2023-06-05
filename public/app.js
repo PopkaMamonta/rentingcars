@@ -85,6 +85,38 @@ clear.addEventListener('click',()=>{
     for (let b = 0; b < checkBox.length; b++) {
         checkBox[b].checked=false;       
     }
+    for (let i = 0; i < inputBody.length; i++) {
+        inputBody[i].classList.remove('active');
+    }
+    for (let i = 0; i < inputBodyBigger.length; i++) {
+        inputBodyBigger[i].classList.remove('active');
+    }
 })
 
 
+const inputBody=[...
+    document.querySelectorAll('.img-box')];
+const inputBodyBigger=[...
+    document.querySelectorAll('.img-box-bigger')];
+for (let k = 0; k < inputBody.length; k++) {
+    inputBody[k].addEventListener('click',()=>{
+        if(inputBody[k].classList.value=="img-box active"){
+            inputBody[k].classList.remove('active');
+            console.log(inputBody[k].classList.value)
+        }else{
+            inputBody[k].classList.add('active');
+            console.log(inputBody[k].classList.value)
+        }
+    })
+}
+for (let k = 0; k < inputBodyBigger.length; k++) {
+    inputBodyBigger[k].addEventListener('click',()=>{
+        if(inputBodyBigger[k].classList.value=="img-box-bigger active"){
+            inputBodyBigger[k].classList.remove('active');
+            console.log(inputBodyBigger[k].classList.value)
+        }else{
+            inputBodyBigger[k].classList.add('active');
+            console.log(inputBodyBigger[k].classList.value)
+        }
+    })
+}

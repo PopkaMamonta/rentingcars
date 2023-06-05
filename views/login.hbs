@@ -1,20 +1,20 @@
 <div class="login-page">
     <a href="/"><img class="arrow-back" src="/images/arrow.png"></a>
-    <form action="" class="login-form">
+    <form action="/" class="login-form">
             <div class="login-container">
                 <div class="left-login-title">
                     <a class="login-title">Вход</a>
                 </div>
                 <div class="input-container">
-                    <input id="login_email" type="text" class="login-email" placeholder="Логин/Почта">
+                    <input id="login_email" type="text" class="login-email" placeholder="Логин/Почта" autocomplete="off" required>
                 </div>
                 <div class="input-container">
-                    <input id="password" type="password" class="password" placeholder="Пароль">
+                    <input id="password" type="password" class="password" placeholder="Пароль" required>
                 </div>
                 <div class="left">
                     <a href="" class="forgotten">забыли пароль?</a>
                 </div>
-                <button class="login-btn" id="login_btn">Войти</button>
+                <button class="login-btn" id="login_btn" type="submit">Войти</button>
                 <a href="/registration" class="reg">регистрация</a>
             </div>
     </form>
