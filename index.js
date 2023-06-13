@@ -3,6 +3,7 @@ const path=require('path')
 const exphbs=require('express-handlebars')
 const app=express()
 const CryptoJS = require("crypto-js");
+const urlencodedParser = express.urlencoded({extended: false});
 
 const hbs=exphbs.create({
     defaultLayout: 'main',
@@ -25,12 +26,15 @@ var mysql = require('mysql');
 //   });
 // });
 
-var con = mysql.createConnection({
+const pool = mysql.createPool({
+    connectionLimit: 5,
     host: "localhost",
     user: "rentingcars",
     password: "rentingcars",
     database: "rentingcars"
   });
+
+
 
   /////////////////////////////////////////////////////////////////
 
@@ -40,10 +44,10 @@ var con = mysql.createConnection({
 
 
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-  });
+// con.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+//   });
   function init(){
     var sql = "CREATE TABLE users (id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,login VARCHAR(255), email VARCHAR(255), tel VARCHAR(255), name VARCHAR(255), surname VARCHAR(255),money INT(11), password VARCHAR(255))";
     con.query(sql, function (err, result) {
@@ -107,6 +111,27 @@ app.get('/login', (req,res)=>{
 app.get('/registration', (req,res)=>{
     res.render('registration')
 })
+
+app.post('/registration',urlencodedParser,function(req,res){
+  if(!req.body) return res.sendStatus(400);
+  const key = "34185124";
+  const login=req.body.login;
+  const email=req.body.email;
+  const phone=req.body.phone;
+  const name=req.body.name;
+  const surname=req.body.surname;
+  const passwordreg=req.body.password;
+  const encryptedpass = CryptoJS.AES.encrypt(passwordreg, key);
+  pool.query(`INSERT INTO users (login, email, tel, name, surname, password) VALUES (?,?,?,?,?,'${encryptedpass}')`, [login, email, phone, name, surname], function(err, data) {
+    if(err) return console.log(err);
+    res.redirect("/");
+    var id=data.insertId;
+  });
+  pool.query('INSERT INTO userroles (user_id,role_id) VALUES (?,1)', [id], function(err, data) {
+    if(err) return console.log(err);
+  });
+})
+
 app.get('/renting', (req,res)=>{
     res.render('renting')
 })
@@ -119,5 +144,4 @@ const PORT=process.env.PORT || 3000
 app.listen(PORT,()=>{
     console.log(`Server is running on ${PORT}`)
 })
-
 

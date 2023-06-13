@@ -1,29 +1,29 @@
 <div class="registration-page">
     <a href="/login"><img class="arrow-back" src="/images/arrow.png"></a>
-    <form action="" class="registration-form">
+    <form method="POST" class="registration-form">
             <div class="registration-container">
                 <div class="left-registration-title">
                     <a class="registration-title">Регистрация</a>
                 </div>
                 <div class="input-container-registration">
-                    <input id="login-input" type="text" class="login-input" placeholder="Логин" autocomplete="off" required>
+                    <input name="login" id="login-input" type="text" class="login-input" placeholder="Логин" autocomplete="off" required>
                 </div>
                 <div class="input-container-registration">
-                    <input id="email-input" type="email" class="email-input" placeholder="Почта" autocomplete="off" required>
+                    <input name="email" id="email-input" type="email" class="email-input" placeholder="Почта" autocomplete="off" required>
                 </div>
                 <div class="input-container-registration">
-                    <input id="tel" type="number" class="tel" placeholder="Номер телефона" autocomplete="off" required>
+                    <input name="phone" id="tel" type="number" class="tel" placeholder="Номер телефона" autocomplete="off" required>
                 </div>
                 <div class="input-container-registration">
-                    <input id="name" type="text" class="name" placeholder="Имя" autocomplete="off" required>
+                    <input name="name" id="name" type="text" class="name" placeholder="Имя" autocomplete="off" required>
                 </div>
                 <div class="input-container-registration">
-                    <input id="surname" type="text" class="surname" placeholder="Фамилия" autocomplete="off" required>
+                    <input name="surname" id="surname" type="text" class="surname" placeholder="Фамилия" autocomplete="off" required>
                 </div>
                 <div class="input-container-registration">
-                    <input id="password" type="password" class="password" placeholder="Пароль" required>
+                    <input name="password" id="password" type="password" class="password" placeholder="Пароль" required>
                 </div>
-                <button class="registration-btn" id="registration_btn">Зарегистрироваться</button>
+                <button type="submit" class="registration-btn" id="registration_btn">Зарегистрироваться</button>
                 <a href="/login" class="log">вход</a>
             </div>
     </form>
